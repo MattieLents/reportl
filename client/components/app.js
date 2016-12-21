@@ -7,9 +7,9 @@ export default class App extends Component {
     return (
       <div>
         <div>
-          <Link to='/'>|....Login....|</Link>&nbsp;
-          <Link to='/class'>|....Class Builder....|</Link>
-          <Link to='/user'>|....Create User....|</Link>
+          <button><Link to='/'>Login</Link>&nbsp;</button>
+          <button><Link to='/class'>Class Builder</Link></button>
+          <button><Link to='/user'>Create User</Link></button>
         </div>
         <div>
           {this.props.children}
