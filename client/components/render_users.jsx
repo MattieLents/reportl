@@ -12,6 +12,7 @@ class RenderUsers extends Component {
     console.log('props: allTeachers: ', this.props.allTeachers);
     return this.props.allTeachers.map(eachTeacher => (
       <div>
+        <img alt="profile" src={eachTeacher.imgUrl} />
         <li key={eachTeacher.email}>
           <div>Name: {eachTeacher.fullName}</div>
           <div>Email: {eachTeacher.email}</div>
@@ -32,6 +33,7 @@ class RenderUsers extends Component {
     console.log('props: allStudents: ', this.props.allStudents);
     return this.props.allStudents.map(eachStudent => (
       <div>
+        <img alt="profile" src={eachStudent.imgUrl} />
         <li key={eachStudent.email}>
           <div>Name: {eachStudent.fullName}</div>
           <div>Email: {eachStudent.email}</div>
