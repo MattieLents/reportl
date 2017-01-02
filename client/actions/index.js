@@ -78,7 +78,7 @@ export function createProfileInformation(profile) {
 }
 
 export function getProfileInformation() {
-  const request = axios.get('/api/users/1');
+  const request = axios.get('/api/users/8');
   return {
     type: 'GET_PROFILE',
     payload: request,
@@ -103,6 +103,16 @@ export function updateClass(form) {
   const request = axios.put(`/api/classes/${form.id}`, form);
   return {
     type: 'UPDATE_CLASS_INFO',
+    payload: request,
+  };
+}
+
+export function uploadFile(files) {
+  const data = new FormData();
+  Object.keys(files.uploadedFile).forEach(key => data.append(key, files.uploadedFile[key]));
+  const request = axios.post('/api/files', data);
+  return {
+    type: 'UPLOAD_FILE',
     payload: request,
   };
 }

@@ -13,7 +13,7 @@ import LoginField from './containers/login-field';
 import UserForm from './containers/addUser';
 import RenderClassBuilder from './components/render_class_builder';
 import RenderUsers from './components/render_users';
-import UpdateProfile from './containers/update_profile';
+import UpdateProfile from './components/render_profile_builder';
 import RenderProfile from './components/render_profile';
 import RenderClasses from './components/render_classes';
 

@@ -4,15 +4,10 @@ import { createProfileInformation } from '../actions/index';
 
 const UpdateProfile = ({ handleSubmit }) => (
   <div>
-    <h2>Profile</h2>
     <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="id">User ID</label>
         <Field name="id" component="input" type="number" />
-      </div>
-      <div>
-        <label htmlFor="Profile Photo">Profile Photo</label>
-        <Field name="imgUrl" component="input" type="file" />
       </div>
       <div>
         <label htmlFor="Update Email">Update Email</label>
