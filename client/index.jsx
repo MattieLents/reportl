@@ -18,6 +18,7 @@ import RenderProfile from './components/render_profile';
 import RenderClasses from './components/render_classes';
 import RenderDepartments from './components/render_departments';
 import RenderGradeGraph from './components/render_grade_graph';
+import RenderAttendees from './components/attendance_student';
 
 const logger = createLogger();
 
@@ -35,6 +36,7 @@ ReactDOM.render(
         <Route path="/profile" component={RenderProfile} />
         <Route path="/department" component={RenderDepartments} />
         <Route path="/gradegraph" component={RenderGradeGraph} />
+        <Route path="/attendance" component={RenderAttendees} />
       </Route>
     </Router>
   </Provider>

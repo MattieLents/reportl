@@ -13,6 +13,7 @@ const App = ({ children }) => (
       <button><Link to="/profile">View Profile</Link></button>
       <button><Link to="/department">View Department</Link></button>
       <button><Link to="/gradegraph">View Grades</Link></button>
+      <button><Link to="/attendance">Take Attendance</Link></button>
     </div>
     <div>
       {children}

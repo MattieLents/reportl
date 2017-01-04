@@ -2,6 +2,31 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getAllTeachers, getAllStudents, deleteUser } from '../actions/index';
 
+const containerStyle = {
+  display: 'flex',
+  flexWrap: 'wrap',
+};
+
+const thumbnailStyle = {
+  height: '50px',
+  width: '50px',
+};
+
+const blockStyle = {
+  display: 'block',
+  borderStyle: 'solid',
+  height: '60px',
+  width: '250px',
+  margin: '5px',
+  justifyContent: 'center',
+  alignItems: 'center',
+  borderWidth: 'thin',
+};
+
+const textStyle = {
+  float: 'right',
+};
+
 class RenderUsers extends Component {
   componentWillMount() {
     this.props.getAllTeachers();
@@ -11,20 +36,20 @@ class RenderUsers extends Component {
   renderTeachers() {
     console.log('props: allTeachers: ', this.props.allTeachers);
     return this.props.allTeachers.map(eachTeacher => (
-      <div>
-        <img alt="profile" src={eachTeacher.imgUrl} />
-        <li key={eachTeacher.email}>
+      <div style={blockStyle}>
+        <img style={thumbnailStyle} alt="profile" src={eachTeacher.imgUrl} />
+        <div style={textStyle} key={eachTeacher.email}>
           <div>Name: {eachTeacher.fullName}</div>
           <div>Email: {eachTeacher.email}</div>
-        </li>
-        <button
-          onClick={() => {
-            deleteUser(eachTeacher.id);
-            this.props.getAllTeachers();
-          }}
-        >
-          DELETE
-        </button>
+          <button
+            onClick={() => {
+              deleteUser(eachTeacher.id);
+              this.props.getAllTeachers();
+            }}
+          >
+            DELETE
+          </button>
+        </div>
       </div>
     ));
   }
@@ -32,35 +57,34 @@ class RenderUsers extends Component {
   renderStudents() {
     console.log('props: allStudents: ', this.props.allStudents);
     return this.props.allStudents.map(eachStudent => (
-      <div>
-        <img alt="profile" src={eachStudent.imgUrl} />
-        <li key={eachStudent.email}>
+      <div style={blockStyle}>
+        <img style={thumbnailStyle} alt="profile" src="http://localhost:8000/api/files/1" />
+        <div style={textStyle} key={eachStudent.email}>
           <div>Name: {eachStudent.fullName}</div>
           <div>Email: {eachStudent.email}</div>
-        </li>
-        <button
-          onClick={() => {
-            deleteUser(eachStudent.id);
-            this.props.getAllStudents();
-          }}
-        >
-          DELETE
-        </button>
+          <button
+            onClick={() => {
+              deleteUser(eachStudent.id);
+              this.props.getAllStudents();
+            }}
+          >
+            DELETE
+          </button>
+        </div>
       </div>
     ));
   }
 
   render() {
     return (
-      <div>
+      <div style={containerStyle}>
         <h1>Students</h1>
-        <ul>
-          {this.renderStudents()}
-        </ul>
+        <br />
+        {this.renderStudents()}
+        <br />
         <h1>Teachers</h1>
-        <ul>
-          {this.renderTeachers()}
-        </ul>
+        <br />
+        {this.renderTeachers()}
       </div>
     );
   }

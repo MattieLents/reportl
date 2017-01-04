@@ -133,10 +133,20 @@ export function getChartData() {
   };
 }
 
-export function getAllAttendees(meetingId) {
-  const request = axios.get(`/api/meetings/${meetingId}`); // endpoint hasn't been created yet
+export function getAllAttendees() {
+  console.log('getAllAttendees was triggered!');
+  // const request = axios.get(`/api/meetings/${meetingId}`);
+  const request = axios.get('/api/usertypes/student');
   return {
-    type: 'GET_ATTENDEEES',
+    type: 'GET_ATTENDEES',
+    payload: request,
+  };
+}
+
+export function markPresent(attendanceId) {
+  const request = axios.put(`/api/${attendanceId}`); // placeholder
+  return {
+    type: 'MARK_PRESENT',
     payload: request,
   };
 }
