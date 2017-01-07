@@ -101,11 +101,6 @@ class RenderCalendar extends Component {
       return false;
     }
 
-    // const newWeek = [thisWeek[0].month, thisWeek[0].dayOfMonth];
-
-    // this.setState({ weekOf: newWeek });
-     // {this.thisWeek[0].month} {this.thisWeek[0].dayOfMonth}
-
     return thisWeek.map(eachDay => (
 
       <div style={dayStyle} key={eachDay.id}>
