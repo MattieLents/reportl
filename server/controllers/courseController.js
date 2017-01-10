@@ -12,7 +12,9 @@ const courseController = {
 
   getCourseById({ params: { id } }, res) {
     Course.forge({ id })
-      .fetch()
+      .fetch({
+        withRelated: ['classes'],
+      })
       .then((course) => {
         console.log(JSON.stringify(course));
         res.json(course);

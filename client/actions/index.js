@@ -58,6 +58,16 @@ export function deleteUser(id) {
   };
 }
 
+export function getUserById(id) {
+  const endpoint = `/api/users/${id}`;
+  const request = axios.get(endpoint);
+
+  return {
+    type: 'GET_USER',
+    payload: request,
+  };
+}
+
 export function getAllUsers() {
   const request = axios.get('/api/users');
 

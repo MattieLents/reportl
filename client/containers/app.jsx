@@ -75,7 +75,7 @@ class App extends React.Component {
         <div style={navStyle}>
           <h1 style={titleStyle}>reportl</h1>
           {this.isAuthType('student', 'teacher') && <Link to="/dashboard"><button style={buttonStyle} onClick={() => this.switchView('Dashboard')}>My Dashboard</button></Link>}
-          {this.isAuthType('student', 'teacher') && <Link to="/coursecatalog"><button style={buttonStyle} onClick={() => this.switchView('School')}>My School</button></Link>}
+          {this.isAuthType('student', 'teacher') && <Link to="/coursecatalog/department/"><button style={buttonStyle} onClick={() => this.switchView('School')}>My School</button></Link>}
           {(this.isAuth() && <div style={buttonStyle}>{`Welcome: ${this.props.user.name} | ID: ${this.props.user.id}`}</div>)}
           {this.isAuthType('student', 'teacher') && <Link to="/updateprofile"><button style={buttonStyle} onClick={() => this.switchView('Settings')}><img alt="Settings" src="../assets/ic_settings_white_24dp_1x.png" /></button></Link>}
         </div>

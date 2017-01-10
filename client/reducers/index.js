@@ -30,6 +30,7 @@ import SearchCalendar from './search_calendar_reducer';
 import Meeting from './get_meeting_reducer';
 import SelectedClassGraph from './selected_class_graph_reducer';
 import SelectedUserGraph from './selected_user_graph_reducer';
+import GetUser from './get_user_reducer';
 
 const rootReducer = combineReducers({
   user: LoginReducer,
@@ -61,6 +62,7 @@ const rootReducer = combineReducers({
   meeting: Meeting,
   selectedClassGraph: SelectedClassGraph,
   selectedUserGraph: SelectedUserGraph,
+  getUser: GetUser,
 });
 
 const logger = createLogger();

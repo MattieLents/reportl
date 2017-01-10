@@ -1,12 +1,13 @@
 const Class = require('../models/classModel');
 require('../models/moduleModel');
 require('../models/userModel');
+        // withRelated: ['course', 'modules', 'users', 'teacher'],
 
 const classController = {
   getClassById({ params: { id } }, res) {
     Class.forge({ id })
       .fetch({
-        withRelated: ['course', 'modules', 'users', 'teacher'],
+        withRelated: ['course', 'modules', 'users'],
       })
       .then((clas) => {
         console.log(JSON.stringify(clas));
