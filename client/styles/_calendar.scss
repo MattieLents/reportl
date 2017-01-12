@@ -1,0 +1,58 @@
+.calContain {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+};
+
+.calWeekDay {
+  display: block;
+  background-color: $quaternary-color;
+  color: $light;
+  text-align: center;
+  font-size: x-large;
+  padding: 5px;
+};
+
+.calDate {
+  display: block;
+  text-align: center;
+  border: none;
+};
+
+.calDay {
+  display: block;
+  border: none;
+  background-color: $light;
+  height: 480px;
+  width: 220px;
+  margin: 20px;
+  box-shadow: 10px 10px 5px lightgrey;
+  font-size: large;
+};
+
+.calMeeting {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: block;
+  background-color: $primary-color;
+  height: 80px;
+  border: none;
+  font-size: medium;
+  font-style: normal;
+  color: $dark;
+};
+
+.calWeek {
+  margin-right: 20px;
+  margin-left: 20px;
+};
+
+.calButton {
+  display: block;
+  background-color: $quaternary-color;
+  font-size: medium;
+  height: 30px;
+  margin-top: 15px;
+  border: none;
+  color: $light;
+};

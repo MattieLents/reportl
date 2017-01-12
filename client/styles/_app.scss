@@ -1,0 +1,45 @@
+body {
+  margin: 0px;
+  background-color: $light;
+  color: $dark;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: $light;
+  background-color: $tertiary-color;
+}
+
+.title {
+  margin-left: '0px';
+  color: $light;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.navButtons {
+  background-color: $tertiary-color;
+  color: $light;
+  border: none;
+  font-size: large;
+  outline: none;
+}
+
+.logout {
+  background-color: $tertiary-color;
+  color: $light;
+  border: none;
+  font-size: medium;
+  outline: none;
+};
+
+.pageTitle{
+  font-size: 40px;
+  text-align: center;
+}

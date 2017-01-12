@@ -1,26 +1,14 @@
-.defaultContainer {
-  margin-left: 10%;
-  margin-right: 10%;
-}
+$font-stack: Helvetica, sans-serif;
+$primary-color: #93ebcf;
+$secondary-color: #eba593;
+$tertiary-color: #C26047;
+$quaternary-color: #188160;
+$dark: #09241B;
+$light: #fdf7f4;
 
-.defaultButton {
-  display: block;
-  color: white;
-  background-color: grey;
-  margin: 20px;
-  font-size: medium;
-  padding: 10px;
-  border: none;
-}
-
-*{
-  font-family: Helvetica;
-}
-
-.pageTitle{
-  font-size: 40px;
-  text-align: center;
-}
+@import 'app';
+@import 'subNav';
+@import 'calendar';
 
 .courseCatalogButton{
   background-color: #288ad6;
@@ -32,6 +20,7 @@
   padding: 15px;
   border: none;
 }
+
 .courseDetails{
   text-align: left;
 }
@@ -103,6 +92,5 @@
     background-color: #8abee5;
     font-size: 20px;
     height: 30px;
-
   }
 }

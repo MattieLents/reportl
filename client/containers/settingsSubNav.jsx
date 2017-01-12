@@ -1,18 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
-import subNav from '../styles/subNav';
-
-const { subNavButton, container } = subNav;
 
 const SettingsSubNav = ({ user }) => {
   const isAuth = () => !!user.id;
   const isAuthType = (...types) => isAuth() && !!user.type && types.includes(user.type.name);
 
   return (
-    <div style={container}>
-      {isAuthType('student', 'teacher') && <Link to="/updateprofile"><button style={subNavButton}>Edit Profile</button></Link>}
-      {isAuthType('teacher') && <Link to="/createform"><button style={subNavButton}>Create Form</button></Link>}
+    <div className="subNav">
+      {isAuthType('student', 'teacher') && <Link to="/updateprofile"><button className="subNavButton">Edit Profile</button></Link>}
+      {isAuthType('teacher') && <Link to="/createform"><button className="subNavButton">Create Form</button></Link>}
     </div>
   );
 };

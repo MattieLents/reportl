@@ -1,0 +1,17 @@
+.subNavButton {
+  outline: none;
+  border: none;
+  background-color: $secondary-color;
+  color: $light;
+  font-size: medium;
+}
+
+.subNav {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  background-color: $secondary-color;
+  height: 40px;
+  padding-right: 300px;
+  padding-left: 300px;
+}

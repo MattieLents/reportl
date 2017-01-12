@@ -4,63 +4,6 @@ import { Link } from 'react-router';
 import { bindActionCreators } from 'redux';
 import { getAllCalendarEvents, getMeetingById, getAllAttendees } from '../actions/index';
 
-// import SearchCalendar from '../containers/getCalendarDays';
-const containerStyle = {
-  display: 'flex',
-  flexWrap: 'wrap',
-  justifyContent: 'center',
-};
-
-const weekDayStyle = {
-  display: 'block',
-  backgroundColor: 'black',
-  color: 'white',
-  textAlign: 'center',
-  fontSize: 'x-large',
-  padding: '5px',
-};
-
-const dateStyle = {
-  display: 'block',
-  textAlign: 'center',
-  borderStyle: 'solid',
-  borderWidth: 'thin',
-};
-
-const dayStyle = {
-  display: 'block',
-  borderStyle: 'solid',
-  backgroundColor: 'white',
-  height: '480px',
-  width: '220px',
-  margin: '10px',
-  boxShadow: '10px 10px 5px lightgrey',
-  borderWidth: 'thin',
-  fontSize: 'large',
-};
-
-const meetingStyle = {
-  marginTop: '40px',
-  marginBottom: '40px',
-  display: 'block',
-  backgroundColor: 'lightgrey',
-  height: '80px',
-};
-
-const weekStyle = {
-  marginRight: '20px',
-  marginLeft: '20px',
-};
-
-const buttonStyle = {
-  display: 'block',
-  backgroundColor: 'lightgrey',
-  fontSize: 'medium',
-  height: '30px',
-  marginTop: '15px',
-};
-
-
 class RenderCalendar extends Component {
   constructor(props) {
     super(props);
@@ -82,12 +25,6 @@ class RenderCalendar extends Component {
     }
   }
 
-  // renderSearchResults() {
-  //   return this.props.calendarSearchResult.map(eachResultDay => (
-  //     <div>{eachResultDay}</div>
-  //   ));
-  // }
-
   renderCalendar() {
     const isThisWeek = ({ dayCount: day }) => {
       if (day >= this.state.startDay && day < this.state.startDay + 5) {
@@ -106,19 +43,22 @@ class RenderCalendar extends Component {
 
     return thisWeek.map(eachDay => (
 
-      <div style={dayStyle} key={eachDay.id}>
-        <div style={weekDayStyle}>{`${eachDay.weekDay}`}</div>
-        <div style={dateStyle}>{`${eachDay.month} ${eachDay.dayOfMonth}`}</div>
+      <div className="calDay" key={eachDay.id}>
+        <div className="calWeekDay">{`${eachDay.weekDay}`}</div>
+        <div className="calDate">{`${eachDay.month} ${eachDay.dayOfMonth}`}</div>
         {eachDay.meetings.map(meeting => (
-          <div style={meetingStyle} key={meeting.id}>
-            <button
-              onClick={() => {
-                this.props.getMeetingById(meeting.id);
-                this.props.getAllAttendees(meeting.id);
-              }}
-            >
-              <Link to="/lesson">Meeting: {`classId: ${meeting.classId}, start: ${meeting.startTime}, end: ${meeting.endTime}`}</Link>
-            </button>
+          <div key={meeting.id}>
+            <Link to="/lesson">
+              <button
+                className="calMeeting"
+                onClick={() => {
+                  this.props.getMeetingById(meeting.id);
+                  this.props.getAllAttendees(meeting.id);
+                }}
+              >
+              Meeting: {`classId: ${meeting.classId}, start: ${meeting.startTime}, end: ${meeting.endTime}`}
+              </button>
+            </Link>
           </div>
         ))}
       </div>
@@ -142,11 +82,11 @@ class RenderCalendar extends Component {
     console.log('firstDay', firstDay);
     console.log('this.state.startDay', this.state.startDay);
     return (
-      <div style={containerStyle}>
-        <button style={buttonStyle} onClick={() => this.changeWeek('last')}>Last</button>
-        <h3 style={weekStyle}>Week of {firstDay[0].month} {firstDay[0].dayOfMonth}</h3>
-        <button style={buttonStyle} onClick={() => this.changeWeek('next')}>Next</button>
-        <div style={containerStyle}>
+      <div className="calContain">
+        <button className="calButton" onClick={() => this.changeWeek('last')}>Last</button>
+        <h3 className="calWeek">Week of {firstDay[0].month} {firstDay[0].dayOfMonth}</h3>
+        <button className="calButton" onClick={() => this.changeWeek('next')}>Next</button>
+        <div className="calContain">
           {this.renderCalendar()}
         </div>
       </div>
@@ -159,7 +99,6 @@ RenderCalendar.propTypes = {
   calendarData: React.PropTypes.arrayOf(React.PropTypes.object),
   getMeetingById: React.PropTypes.func,
   getAllAttendees: React.PropTypes.func,
-  // calendarSearchResult: React.PropTypes.arrayOf(React.PropTypes.object),
 };
 
 function mapDispatchToProps(dispatch) {
