@@ -8,7 +8,6 @@ import App from './containers/app';
 import LoginField from './containers/login-field';
 import UserForm from './containers/addUser';
 import RenderClassBuilder from './components/render_class_builder';
-import RenderUsers from './components/render_users';
 import UpdateProfile from './components/render_profile_builder';
 import RenderProfile from './components/render_profile';
 import RenderClasses from './components/render_classes';
@@ -25,6 +24,7 @@ import RenderSingleClass from './components/render_single_class';
 import renderDailySchedule from './containers/myDailySchedule';
 import CreateForm from './components/create_all_forms';
 import RenderUserTable from './containers/render_user_table';
+import Directory from './containers/directory';
 
 const isAuth = () => !!store.getState().user.id;
 
@@ -56,7 +56,6 @@ ReactDOM.render(
         <Route path="/class" component={RenderClassBuilder} />
         <Route path="/user" component={UserForm} />
         <Route path="/classes" component={RenderClasses} />
-        <Route path="/users" component={RenderUsers} />
         <Route path="/updateprofile" component={UpdateProfile} />
         <Route
           path="/profile"
@@ -82,6 +81,8 @@ ReactDOM.render(
         <Route path="/coursecatalog/department/course/class" component={RenderSingleClass} />
         <Route path="/createform" component={CreateForm} />
         <Route path="/usertable" component={RenderUserTable} />
+        <Route path="/directory" component={Directory} />
+        <Route path="/users" component={Directory} />
       </Route>
     </Router>
   </Provider>
