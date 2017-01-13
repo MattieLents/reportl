@@ -1,0 +1,34 @@
+.leftColumn {
+  width: 400px;
+  margin-right: 20px;
+}
+
+.rightcolumn {
+  width: 400px;
+}
+
+.columnContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.titleBlock {
+  background-color: $quaternary-color;
+  margin-top: 10px;
+  font-size: x-large;
+  padding: 5px;
+  justify-content: center;
+  color: $light;
+}
+
+.textBlock {
+  background-color: $primary-color;
+  font-size: large;
+  padding: 5px;
+  color: $light;
+}
+
+.itemBlock {
+  background-color: $primary-color;
+  margin-bottom: 20px;
+}

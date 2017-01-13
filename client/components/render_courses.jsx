@@ -7,17 +7,18 @@ class RenderClassesforCourse extends Component {
   renderCourses() {
     if (this.props.course.classes) {
       return (
-        <div className="courseCatalogHeaders courseDetails">Name: {this.props.course.name}
-          <div>{this.props.course.description}</div>
+        <div className="courseCard">
+          <div className="courseHeader">{this.props.course.name}</div>
+          <div className="courseDescript">{this.props.course.description}</div>
           <div>{this.props.course.classes.map(eachClass => (
             <Link to="/coursecatalog/department/course/class"><button
-              className="courseCatalogButton"
+              className="courseButton"
               onClick={() => {
                 this.props.getClassById(eachClass.id);
                 this.props.getUserById(eachClass.teacherId);
               }}
             >
-               Class ID: {eachClass.id}
+              <div>Details for {eachClass.name} - Class ID {eachClass.id}</div>
             </button></Link>
           ))}</div>
         </div>
@@ -28,8 +29,7 @@ class RenderClassesforCourse extends Component {
 
   render() {
     return (
-      <div>
-        <h3 className="pageTitle">Course Details</h3>
+      <div className="course">
         {this.renderCourses()}
       </div>
     );

@@ -1,0 +1,42 @@
+.courseButton {
+  background-color: $quaternary-color;
+  width: 100%;
+  height: 75px;
+  font-size: 20px;
+  color: $light;
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  float: center;
+  margin-top: 5px;
+}
+
+.courseCard {
+  box-shadow: 10px 10px 5px lightgrey;
+  margin: 20px;
+  background-color: $primary-color;
+  color: $light;
+  font-size: large;
+}
+
+.courseDescript {
+  color: $light;
+  font-size: x-large;
+  padding: 20px;
+}
+
+.course {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.courseHeader{
+  font-size: 25px;
+  text-align: center;
+  background-color: $quaternary-color;
+  color: $light;
+  padding: 5px;
+}

@@ -11,35 +11,29 @@ class RenderSingleClass extends Component {
     return (
       <div>{this.props.selectedClass.map(classInfo => (
         <div>
-          <div className="classSection">
-            <div>Course Name: {classInfo.course.name}</div>
+          <div className="itemBlock">
+            <div className="titleBlock">{this.props.selectedClass[0].name}</div>
+            <div>Teacher: {this.props.teacher}</div>
             <div>Class ID: {classInfo.id}</div>
-            <div>Full Name: {this.props.teacher}</div>
           </div>
-          <h2 className="courseCatalogHeaders">Modules</h2>
-          <div className="classSection">
-            <div>{classInfo.modules.map(module => (
-              <div>
-                <div>Module Name: {module.moduleName}</div>
-                <div>Percent of Class Grade: {module.percentOfClassGrade}</div>
-                <div>Start Date: {module.startDate.slice(5, 10)}</div>
-                <div>End Date: {module.endDate.slice(5, 10)}</div>
-              </div>
-            ))}</div>
-          </div>
-          <h2 className="courseCatalogHeaders">Students</h2>
-          <div className="classSection">
-            <div>{classInfo.users.map(user => (
-              <div>
-                <div>{user.imgUrl}</div>
-                <div>Student Name: {user.fullName}</div>
-                <div>Student Description: {user.description}</div>
-                <div>Student Date of Birth: {user.dateOfBirth}</div>
-                <div>Student Email: {user.email}</div>
-                <div>Student Phone Number: {user.phoneNumber}</div>
-                <div>Student Phone Address: {user.address}</div>
-              </div>
-            ))}</div>
+          <div className="columnContainer">
+            <div className="leftColumn">
+              <h2 className="titleBlock">Modules</h2>
+              <div>{classInfo.modules.map(module => (
+                <div className="itemBlock">
+                  <div className="titleBlock">{module.moduleName}</div>
+                  <div>Percent of Class Grade: {module.percentOfClassGrade}</div>
+                  <div>Start Date: {module.startDate.slice(5, 10)}</div>
+                  <div>End Date: {module.endDate.slice(5, 10)}</div>
+                </div>
+              ))}</div>
+            </div>
+            <div className="rightColumn">
+              <h2 className="titleBlock">Students</h2>
+              <div className="itemBlock">{classInfo.users.map(user => (
+                <div className="titleBlock">{user.fullName}</div>
+              ))}</div>
+            </div>
           </div>
         </div>
         ))}
@@ -50,12 +44,7 @@ class RenderSingleClass extends Component {
   render() {
     return (
       <div>
-        <h2>{this.props.selectedClass.map(title => (
-          <div className="pageTitle">{title.name}</div>
-          ))}</h2>
-        <div>
-          {this.renderSingleClass()}
-        </div>
+        {this.renderSingleClass()}
       </div>
     );
   }

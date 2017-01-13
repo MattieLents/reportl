@@ -10,16 +10,31 @@ $light: #fdf7f4;
 @import 'app';
 @import 'subNav';
 @import 'calendar';
+@import 'course';
+@import 'class';
 
 .courseCatalogButton{
-  background-color: #288ad6;
+  background-color: $primary-color;
   width: 250px;
   height: 75px;
   font-size: 20px;
-  color: white;
+  color: $light;
   font-weight: bold;
   padding: 15px;
   border: none;
+}
+
+.courseCatCard {
+  box-shadow: 10px 10px 5px lightgrey;
+  margin: 20px;
+}
+
+.courseCat {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 .courseDetails{
@@ -29,7 +44,9 @@ $light: #fdf7f4;
 .courseCatalogHeaders{
   font-size: 25px;
   text-align: center;
-  background-color: #f4fbfe;
+  background-color: $quaternary-color;
+  color: $light;
+  padding: 5px;
 }
 
 .classSection{

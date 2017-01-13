@@ -21,7 +21,6 @@ class RenderCourseCatalog extends Component {
     return (
       <div>
         <div>
-          <h3>Departments</h3>
           <ul>
             {this.renderDepartments()}
           </ul>
