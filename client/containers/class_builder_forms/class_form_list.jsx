@@ -7,31 +7,26 @@ import StudentForm from './students';
 import ScheduleForm from './scheduling';
 import ModuleForm from './modules';
 import AssignmentsForm from './assignments';
-import RenderClassForm from './render_class_form';
 
-const AppComponents = [['Basic Class', <ClassMaker />], ['Schedule Form', <ScheduleForm />], ['Add Students', <StudentForm />], ['Module Form', <ModuleForm />], ['Assignments/Exams Form', <AssignmentsForm />], ['See Class Details', <RenderClassForm />]];
+const AppComponents = [['Create Class', <ClassMaker />], ['Schedule', <ScheduleForm />], ['Students', <StudentForm />], ['Modules', <ModuleForm />], ['Assignments/Exams', <AssignmentsForm />]];
 
 class FormList extends Component {
 
   renderList() {
     // TODO: Get a unique key
     return AppComponents.map((component, index) => (
-      <li key={index}>
-        <button onClick={() => { this.props.selectForm(component[1]); }}>
-          {component[0]}
-        </button>
-      </li>
+      <button key={index} className="labelClassBuild" onClick={() => { this.props.selectForm(component[1]); }}>
+        {component[0]}
+      </button>
     ));
   }
 
 
   render() {
     return (
-      <div>
-        <h2>Class Builder</h2>
-        <ol>
-          {this.renderList()}
-        </ol>
+      <div className="form">
+        <h2 className="formTitle">Class Builder</h2>
+        {this.renderList()}
       </div>
     );
   }

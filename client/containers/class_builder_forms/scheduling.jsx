@@ -77,10 +77,11 @@ class ScheduleForm extends Component {
 
   render() {
     return (
-      <div>
-        <h2>Schedule Form for {this.props.classes.name}</h2>
-        <p>Start Time</p>
+      <div className="form">
+        <h2 className="formTitle">{this.props.classes.name} Schedule</h2>
+        <div className="label">Start Time</div>
         <input
+          className="field"
           value={this.state.start_time}
           type="time"
           onChange={(event) => {
@@ -88,8 +89,9 @@ class ScheduleForm extends Component {
           }}
         />
         <br />
-        <p>End Time</p>
+        <div className="label">End Time</div>
         <input
+          className="field"
           value={this.state.end_time}
           type="time"
           onChange={(event) => {
@@ -97,8 +99,9 @@ class ScheduleForm extends Component {
           }}
         />
         <br />
-        <p>Location</p>
+        <div className="label">Location</div>
         <input
+          className="field"
           value={this.state.location}
           type="text"
           onChange={(event) => {
@@ -106,40 +109,45 @@ class ScheduleForm extends Component {
           }}
         />
         <br />
-        <p>Monday</p>
+        <div className="label">Monday</div>
         <input
+          className="radioButton"
           type="checkbox"
           onChange={() => {
             this.toggleMonday();
           }}
         />
         <br />
-        <p>Tuesday</p>
+        <div className="label">Tuesday</div>
         <input
+          className="radioButton"
           type="checkbox"
           onChange={() => {
             this.toggleTuesday();
           }}
         />
         <br />
-        <p>Wednesday</p>
+        <div className="label">Wednesday</div>
         <input
+          className="radioButton"
           type="checkbox"
           onChange={() => {
             this.toggleWednesday();
           }}
         />
         <br />
-        <p>Thursday</p>
+        <div className="label">Thursday</div>
         <input
+          className="radioButton"
           type="checkbox"
           onChange={() => {
             this.toggleThursday();
           }}
         />
         <br />
-        <p>Friday</p>
+        <div className="label">Friday</div>
         <input
+          className="radioButton"
           type="checkbox"
           onChange={() => {
             this.toggleFriday();
@@ -147,6 +155,7 @@ class ScheduleForm extends Component {
         />
         <br />
         <button
+          className="formButton"
           type="submit"
           onClick={() => {
             this.props.updateClassById(this.props.classes.id, this.state);

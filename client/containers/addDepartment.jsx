@@ -3,14 +3,14 @@ import { Field, reduxForm } from 'redux-form';
 import { createDepartment } from '../actions/index';
 
 const createDepartmentForm = ({ handleSubmit }) => (
-  <div>
-    <h2>Create Department</h2>
+  <div className="form">
+    <h2 className="formTitle">Create Department</h2>
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="name">Name</label>
-        <Field name="Name" component="input" type="text" />
+        <label className="label" htmlFor="name">Name</label>
+        <Field className="field" name="Name" component="input" type="text" />
       </div>
-      <button type="submit">Submit</button>
+      <button className="formButton" type="submit">Submit</button>
     </form>
   </div>
 );

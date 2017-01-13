@@ -43,10 +43,11 @@ class ClassMaker extends Component {
 
   render() {
     return (
-      <div>
-        <h2>Create Class</h2>
-        <p>Class Name</p>
+      <div className="form">
+        <h2 className="formTitle">Create Class</h2>
+        <div className="label">Class Name</div>
         <input
+          className="field"
           value={this.state.name}
           type="text"
           onChange={(event) => {
@@ -54,8 +55,9 @@ class ClassMaker extends Component {
           }}
         />
         <br />
-        <p>Teacher ID</p>
+        <div className="label">Teacher ID</div>
         <input
+          className="field"
           value={this.state.teacher_id}
           type="number"
           onChange={(event) => {
@@ -63,8 +65,9 @@ class ClassMaker extends Component {
           }}
         />
         <br />
-        <p>Class Size</p>
+        <div className="label">Class Size</div>
         <input
+          className="field"
           value={this.state.size}
           type="number"
           onChange={(event) => {
@@ -73,6 +76,7 @@ class ClassMaker extends Component {
         />
         <br />
         <button
+          className="formButton"
           type="submit"
           onClick={() => {
             this.props.makeNewClass(this.state);

@@ -35,6 +35,6 @@ bower_components/
 storage/
 
 #Sass Cache
-.sass-cache/
+.sass-cache
 
 /client/styles/.sass-cache/

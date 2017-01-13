@@ -44,10 +44,11 @@ class ModuleForm extends Component {
 
   render() {
     return (
-      <div>
-        <h2>Add Modules to {this.props.classes.name}</h2>
-        <p>Module Name</p>
+      <div className="form">
+        <h2 className="formTitle">Add {this.props.classes.name} Modules</h2>
+        <div className="label">Module Name</div>
         <input
+          className="field"
           value={this.state.module_name}
           type="text"
           onChange={(event) => {
@@ -55,8 +56,9 @@ class ModuleForm extends Component {
           }}
         />
         <br />
-        <p>Module Description</p>
+        <div className="label">Module Description</div>
         <input
+          className="field"
           value={this.state.description}
           type="text"
           onChange={(event) => {
@@ -64,8 +66,9 @@ class ModuleForm extends Component {
           }}
         />
         <br />
-        <p>Percent of Class Grade</p>
+        <div className="label">Percent of Class Grade</div>
         <input
+          className="field"
           value={this.state.percent_of_class_grade}
           type="number"
           onChange={(event) => {
@@ -74,6 +77,7 @@ class ModuleForm extends Component {
         />
         <br />
         <button
+          className="formButton"
           type="submit"
           onClick={() => {
             this.props.makeNewModule(this.state);

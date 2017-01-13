@@ -10,7 +10,7 @@ class RenderClassForm extends Component {
 
   renderClasses() {
     return (
-      <div>
+      <div className="form">
         {this.props.selectedClass.map(classItem =>
           <div>
             <div>Class Name: {classItem.name}</div>

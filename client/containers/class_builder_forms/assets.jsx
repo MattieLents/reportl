@@ -3,7 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import { makeNewClass } from '../../actions/index';
 
 const AssetForm = ({ handleSubmit }) => (
-  <div>
+  <div className="form">
     <h2>Asset Form</h2>
     <form onSubmit={handleSubmit}>
       <div>

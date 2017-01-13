@@ -3,28 +3,28 @@ import { Field, reduxForm } from 'redux-form';
 import { createUser } from '../actions/index'; // needs to be written
 
 const UserForm = ({ handleSubmit }) => (
-  <div>
-    <h2>Create User</h2>
+  <div className="form">
+    <h2 className="formTitle">Create User</h2>
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="firstName">First Name</label>
-        <Field name="firstName" component="input" type="text" />
+        <label className="label" htmlFor="firstName">First Name</label>
+        <Field className="field" name="firstName" component="input" type="text" />
       </div>
       <div>
-        <label htmlFor="lastName">Last Name</label>
-        <Field name="lastName" component="input" type="text" />
+        <label className="label" htmlFor="lastName">Last Name</label>
+        <Field className="field" name="lastName" component="input" type="text" />
       </div>
       <div>
-        <label htmlFor="email">Email</label>
-        <Field name="email" component="input" type="email" />
+        <label className="label" htmlFor="email">Email</label>
+        <Field className="field" name="email" component="input" type="email" />
       </div>
       <div>
-        <label htmlFor="type_id"> Student</label>
-        <Field name="type_id" component="input" type="radio" value="1" />
-        <label htmlFor="type_id"> Teacher</label>
-        <Field name="type_id" component="input" type="radio" value="2" />
+        <label className="label" htmlFor="type_id"> Student</label>
+        <Field className="radioButton" name="type_id" component="input" type="radio" value="1" />
+        <label className="label" htmlFor="type_id"> Teacher</label>
+        <Field className="radioButton" name="type_id" component="input" type="radio" value="2" />
       </div>
-      <button type="submit">Submit</button>
+      <button className="formButton" type="submit">Submit</button>
     </form>
   </div>
 );

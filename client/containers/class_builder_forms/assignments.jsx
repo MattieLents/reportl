@@ -43,10 +43,11 @@ class AssignmentsForm extends Component {
 
   render() {
     return (
-      <div>
-        <h2>Add Assignments/Exams to {this.props.classes.name}</h2>
-        <p>Assignment/Exam Name</p>
+      <div className="form">
+        <h2>Add {this.props.classes.name} Assignments/Exams</h2>
+        <div className="label">Assignment/Exam Name</div>
         <input
+          className="field"
           value={this.state.object_name}
           type="text"
           onChange={(event) => {
@@ -54,8 +55,16 @@ class AssignmentsForm extends Component {
           }}
         />
         <br />
-        <p>Assignment/Exam Type (1 - Exam, 2 - Quiz, 3 - Homework, 4 - Essay, 5 - Presentation)</p>
+        <div className="label longLabel">
+          <div>Assignment/Exam Type:</div>
+          <div>1 - Exam</div>
+          <div>2 - Quiz</div>
+          <div>3 - Homework</div>
+          <div>4 - Essay</div>
+          <div>5 - Presentation</div>
+        </div>
         <input
+          className="field"
           value={this.state.type_id}
           type="number"
           onChange={(event) => {
@@ -63,8 +72,9 @@ class AssignmentsForm extends Component {
           }}
         />
         <br />
-        <p>Percent of Module Grade</p>
+        <div className="label">Percent of Module Grade</div>
         <input
+          className="field"
           value={this.state.percent_of_module_grade}
           type="number"
           onChange={(event) => {
@@ -73,6 +83,7 @@ class AssignmentsForm extends Component {
         />
         <br />
         <button
+          className="formButton"
           type="submit"
           onClick={() => {
             this.props.makeNewClass(this.state);

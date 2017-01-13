@@ -9,7 +9,7 @@ const SettingsSubNav = ({ user }) => {
   return (
     <div className="subNav">
       {isAuthType('student', 'teacher') && <Link to="/updateprofile"><button className="subNavButton">Edit Profile</button></Link>}
-      {isAuthType('teacher') && <Link to="/createform"><button className="subNavButton">Create Form</button></Link>}
+      {isAuthType('teacher') && <Link to="/createform"><button className="subNavButton">Admin</button></Link>}
     </div>
   );
 };

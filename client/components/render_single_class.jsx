@@ -12,19 +12,19 @@ class RenderSingleClass extends Component {
       <div>{this.props.selectedClass.map(classInfo => (
         <div>
           <div className="itemBlock">
-            <div className="titleBlock">{this.props.selectedClass[0].name}</div>
-            <div>Teacher: {this.props.teacher}</div>
-            <div>Class ID: {classInfo.id}</div>
+            <h2 className="titleBlock">{this.props.selectedClass[0].name}</h2>
+            <div className="textBlock">Teacher: {this.props.teacher}</div>
+            <div className="textBlock">Class ID: {classInfo.id}</div>
           </div>
           <div className="columnContainer">
-            <div className="leftColumn">
+            <div>
               <h2 className="titleBlock">Modules</h2>
-              <div>{classInfo.modules.map(module => (
+              <div className="leftColumn">{classInfo.modules.map(module => (
                 <div className="itemBlock">
                   <div className="titleBlock">{module.moduleName}</div>
-                  <div>Percent of Class Grade: {module.percentOfClassGrade}</div>
-                  <div>Start Date: {module.startDate.slice(5, 10)}</div>
-                  <div>End Date: {module.endDate.slice(5, 10)}</div>
+                  <div className="textBlock">Percent of Class Grade: {module.percentOfClassGrade}</div>
+                  <div className="textBlock">Start Date: {module.startDate.slice(5, 10)}</div>
+                  <div className="textBlock">End Date: {module.endDate.slice(5, 10)}</div>
                 </div>
               ))}</div>
             </div>

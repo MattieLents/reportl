@@ -12,6 +12,7 @@ $light: #fdf7f4;
 @import 'calendar';
 @import 'course';
 @import 'class';
+@import 'forms';
 
 .courseCatalogButton{
   background-color: $primary-color;
@@ -71,7 +72,6 @@ $light: #fdf7f4;
   color: $light;
   font: $font-stack;
   box-shadow: 10px 10px 5px lightgrey;
-  justify-content: center;
 }
 
 .userCardContainer {

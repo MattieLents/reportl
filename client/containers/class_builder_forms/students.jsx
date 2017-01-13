@@ -28,10 +28,11 @@ class StudentForm extends Component {
 
   render() {
     return (
-      <div>
-        <h2>Add Students to {this.props.classes.name}</h2>
-        <p>Student ID</p>
+      <div className="form">
+        <h2 className="formTitle">Add {this.props.classes.name} Students</h2>
+        <div className="label">Student ID</div>
         <input
+          className="field"
           value={this.state.student_id}
           type="number"
           onChange={(event) => {
@@ -40,6 +41,7 @@ class StudentForm extends Component {
         />
         <br />
         <button
+          className="formButton"
           type="submit"
           onClick={() => {
             this.props.addStudentsToClass(this.state);

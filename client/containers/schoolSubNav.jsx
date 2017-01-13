@@ -11,7 +11,6 @@ const SchoolNav = ({ user }) => {
       {isAuth() && <Link to="/directory"><button className="subNavButton">Directory</button></Link>}
       {isAuthType('student', 'teacher') && <Link to="/coursecatalog/department/"><button className="subNavButton">Course Catalog</button></Link>}
       {isAuthType('teacher') && <Link to="/analytics"><button className="subNavButton">Analytics</button></Link>}
-      {isAuthType('teacher', 'student') && <Link to="/calendar"><button className="subNavButton">Calendar</button></Link>}
     </div>
   );
 };

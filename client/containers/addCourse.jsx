@@ -3,22 +3,22 @@ import { Field, reduxForm } from 'redux-form';
 import { createCourse } from '../actions/index';
 
 const CourseForm = ({ handleSubmit }) => (
-  <div>
-    <h2>Create Course</h2>
+  <div className="form">
+    <h2 className="formTitle">Create Course</h2>
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="name">Name</label>
-        <Field name="name" component="input" type="text" />
+        <label className="label" htmlFor="name">Name</label>
+        <Field className="field" name="name" component="input" type="text" />
       </div>
       <div>
-        <label htmlFor="description">Description</label>
-        <Field name="description" component="input" type="text" />
+        <label className="label" htmlFor="description">Description</label>
+        <Field className="field" name="description" component="input" type="text" />
       </div>
       <div>
-        <label htmlFor="department_id">Department Id</label>
-        <Field name="department_id" component="input" type="number" />
+        <label className="label" htmlFor="department_id">Department Id</label>
+        <Field className="field" name="department_id" component="input" type="number" />
       </div>
-      <button type="submit">Submit</button>
+      <button className="formButton" type="submit">Submit</button>
     </form>
   </div>
 );

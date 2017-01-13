@@ -1,0 +1,95 @@
+.viewSwitch {
+  display: flex;
+  flex-direction: row;
+}
+
+.formContain {
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  background-color: $quaternary-color;
+  margin: 20px;
+  width: 310px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 10px 10px 5px lightgrey;
+  color: $light;
+}
+
+.formClassBuild {
+  background-color: $quaternary-color;
+  margin: 20px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 10px 10px 5px lightgrey;
+  color: $light;
+}
+
+.label {
+  display: flex;
+  background-color: $primary-color;
+  justify-content: center;
+  padding: 5px;
+  color: $light;
+  font-size: x-large;
+  width: 300px;
+  border: none;
+}
+
+.labelClassBuild {
+  display: flex;
+  background-color: $primary-color;
+  justify-content: center;
+  padding: 5px;
+  color: $light;
+  font-size: x-large;
+  width: 310px;
+  border: none;
+  margin-top: 8px;
+  outline: none;
+}
+
+.field {
+  display: flex;
+  justify-content: center;
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: medium;
+  width: 295px;
+  outline: none;
+  border: none;
+}
+
+.longLabel {
+  display: flex;
+  flex-direction: column;
+}
+
+.formTitle {
+  margin-left: 20px;
+  font-size: x-large;
+}
+
+.formButton {
+  display: block;
+  background-color: $primary-color;
+  color: $light;
+  margin: 15px;
+  padding: 10px;
+  font-size: medium;
+  border: none;
+  margin-top: 10px;
+  outline: none;
+  margin-left: 220px;
+}
+
+.radioButton {
+  border: 0px;
+  width: 100%;
+  margin-left: 150px;
+  height: 3em;
+}

@@ -1,10 +1,11 @@
 .leftColumn {
   width: 400px;
-  margin-right: 20px;
+  margin-right: 50px;
 }
 
 .rightcolumn {
   width: 400px;
+  background-color: $primary-color;
 }
 
 .columnContainer {
@@ -14,7 +15,7 @@
 
 .titleBlock {
   background-color: $quaternary-color;
-  margin-top: 10px;
+  margin-bottom: 10px;
   font-size: x-large;
   padding: 5px;
   justify-content: center;
@@ -23,12 +24,14 @@
 
 .textBlock {
   background-color: $primary-color;
-  font-size: large;
-  padding: 5px;
+  font-size: x-large;
+  padding: 8px;
   color: $light;
 }
 
 .itemBlock {
   background-color: $primary-color;
-  margin-bottom: 20px;
+  color: $light;
+  font-size: large;
+  box-shadow: 10px 10px 5px lightgrey;
 }
